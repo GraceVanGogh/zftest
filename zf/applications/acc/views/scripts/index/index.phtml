@@ -1,0 +1,48 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="js/ext34/resources/css/ext-all.css">
+<script type="text/javascript" src="js/ext34/adapter/ext/ext-base.js"></script>
+<script type="text/javascript" src="js/ext34/ext-all.js"></script>
+<script type="text/javascript">
+Ext.onReady(function(){
+	Ext.QuickTips.init();
+	var store = 
+
+	var grid = new Ext.grid.GridPanel({
+		store : 
+		colModel : new Ext.grid.ColumnModel({
+			defaults : {
+				width : 200,
+				sortable : true
+			},
+			columns : [
+				{id: 'company', header: 'Company', width: 200, sortable: true, dataIndex: 'company'},
+				{header: 'Price', renderer: Ext.util.Format.usMoney, dataIndex: 'price'}
+			]
+		
+		}),
+		viewConfig : {
+			forceFit : true
+		},
+		sm : new Ext.grid.RowSelectionModel({singleSelect:true}),
+		width : 600,
+		heigth : 300,
+		frame : true,
+		title : 'grid exercise',
+		autoExpandColumn : 'company',
+		stripeRows : true
+	});
+
+	grid.render('grid');
+	
+
+
+})
+
+</script>
+</head>
+<body>
+<div id="grid"></div>
+</body>
+</html>
